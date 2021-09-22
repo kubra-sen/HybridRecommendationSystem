@@ -20,7 +20,7 @@ def item_based_recommender(movie_name, user_movie_df):
     return user_movie_df.corrwith(movie_name).sort_values(ascending=False).head(10)
 
 def films_user_watched (df, user_id):
-    user_watched_df = user_movie_df[user_movie_df.index == user_id]
+    user_watched_df = df[user_movie_df.index == user_id]
     movies_watched = user_watched_df.columns[user_watched_df.notna().any()].tolist()
     return movies_watched
 
