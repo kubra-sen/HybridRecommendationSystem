@@ -21,7 +21,7 @@ def most_similar_user(df, user_id, common_movie_threshold, corr_threshold):
     movies_watched = user_watched_df.columns[user_watched_df.notna().any()].tolist()
     movies_watched_df = df[movies_watched]
     # Finding the users who watched the same movies at least with a given number
-    movies_watched = films_user_watched(df, user_id)
+
     movies_watched_df = df[movies_watched]
     user_movie_count = movies_watched_df.T.notnull().sum()
     user_movie_count = user_movie_count.reset_index()
