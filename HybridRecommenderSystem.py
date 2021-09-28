@@ -77,6 +77,7 @@ if __name__ == '__main__':
     # Finding the users who watched the same movies with the random user
     top_users = most_similar_user(user_movie_df, random_user, 20, 0.65)
 
+    # Making recommendations using user-based method
     recommended_movies = user_based_recommendation(top_users, rating, 5)
     recommended_movies
 
