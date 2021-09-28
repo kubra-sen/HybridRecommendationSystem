@@ -71,10 +71,10 @@ if __name__ == '__main__':
     # Preparing dataset
     user_movie_df = create_user_movie_df(movie, rating)
 
-    # Choosing a random users
+    # Choosing a random user
     random_user = int(pd.Series(user_movie_df.index).sample(1, random_state=45).values)
 
-    # Finding the users who watched the same movies with the user
+    # Finding the users who watched the same movies with the random user
     top_users = most_similar_user(user_movie_df, random_user, 20, 0.65)
 
     recommended_movies = user_based_recommendation(top_users, rating, 5)
